@@ -1,0 +1,23 @@
+<p>show-all-confirmed-vaccination works!</p>
+<form method="post" action="#">
+    <div class="6u">
+      <input type="date" name="firstName" id="firstName" [(ngModel)]="firstName" />
+    </div>
+    <br/>
+    <div class="6u">
+      <input type="date" name="lastName" id="lastName" [(ngModel)]="lastName" />
+    </div>
+    <br/>
+    <br/>
+      <div class="row uniform">
+        <div class="12u$">
+            <input type="submit" value="List Confirmed Vaccinations" (click)="listAllAppliedVaccinations()"/>
+        </div>
+      </div>
+  </form>
+
+  <ul class="heroes">
+    <li *ngFor="let appliedVaccine of appliedVaccinations">
+      <span class="badge">{{appliedVaccine.id}}</span> payment type is {{appliedVaccine.paymentType}} and appointment {{appliedVaccine.appointment}}   
+    </li>
+  </ul>

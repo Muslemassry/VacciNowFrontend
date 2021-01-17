@@ -1,0 +1,9 @@
+<p>list-all-branches works!</p>
+<ul class="heroes">
+    <li *ngFor="let hero of branches">
+      <a routerLink="/listAvailableVaccinesBranch/{{hero.id}}" >
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+    </li>
+  </ul>
+  

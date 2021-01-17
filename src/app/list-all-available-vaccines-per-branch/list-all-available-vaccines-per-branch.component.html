@@ -1,0 +1,8 @@
+<p>list-all-available-vaccines-per-branch works!</p>
+<button class="btn" (click)="getAvailableTimez()">List Available Times</button>
+<button class="btn" (click)="getAvailableVaccination()">List All Applied Vaccinations</button>
+<ul class="heroes">
+  <li *ngFor="let hero of vaccines">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>

@@ -1,0 +1,30 @@
+<p>list-all-applied-vaccination-per-period works!</p>
+<form method="post" action="#">
+    <div class="6u">
+      To Date  <input type="date" name="fromDate" id="fromDate" [(ngModel)]="fromDate" />
+    </div>
+    <br/>
+    <div class="6u">
+      To Date <input type="date" name="toDate" id="toDate" [(ngModel)]="toDate" />
+    </div>
+    <br/>
+    <br/>
+      <div class="row uniform">
+        <div class="12u$">
+            <input type="submit" value="List Applied Vaccinations" (click)="listAllAppliedVaccinations()"/>
+        </div>
+      </div>
+  </form>
+
+  <ul class="heroes">
+    <li *ngFor="let appliedVaccine of appliedVaccinations" (click)="confirmVaccination(appliedVaccine)">
+      <span class="badge">{{appliedVaccine.id}}</span> payment type is {{appliedVaccine.paymentType}} and appointment {{appliedVaccine.appointment}}  Click to confirm 
+    </li>
+  </ul>
+
+  <div class="6u">
+    To Email <input type="email" name="email" id="email" [(ngModel)]="email" placeholder="Send To email" />
+    <br />
+    <label style="color: red">{{error}}</label>
+    <label style="color: green">{{sentEmailMesage}}</label>
+  </div>

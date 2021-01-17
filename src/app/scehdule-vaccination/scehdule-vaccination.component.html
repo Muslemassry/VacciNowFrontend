@@ -1,0 +1,73 @@
+<h2>Welcome To Scheduling Page!</h2>
+<form method="post" action="#">
+<!--
+      <div class="6u">
+      <input type="text" name="paymentType" id="paymentType" [(ngModel)]="scheduleVaccination.paymentType" placeholder="payment type"/>
+    </div>
+-->
+
+    <div class="6u">
+      <input id="cash" type="radio" value="C" name="cash" [(ngModel)]="scheduleVaccination.paymentType">
+      <label for="cash">Cash</label>
+   </div>
+   <div class="6u">
+      <input id="credit" type="radio" value="B" name="credit" [(ngModel)]="scheduleVaccination.paymentType">
+      <label for="credit">Credit</label>
+   </div>
+   <div class="6u">
+    <input id="fawry" type="radio" value="F" name="fawry" [(ngModel)]="scheduleVaccination.paymentType">
+    <label for="fawry">Fawry</label>
+  </div>
+
+    <br/>
+    <div class="6u">
+      <input type="text" name="patientId" id="patientId" [(ngModel)]="scheduleVaccination.patientId" placeholder="patient Id"/>
+    </div>
+    <br/>
+    <div class="6u">
+        <input type="text" name="branchId" id="branchId" [(ngModel)]="scheduleVaccination.branchId" placeholder="branch Id"/>
+      </div>
+      <br/>
+      <div class="6u">
+        <input type="text" name="vaccineId" id="vaccineId" [(ngModel)]="scheduleVaccination.vaccineId" placeholder="vaccine Id" disabled/>
+            <input type="submit" value="Show available Vaccines" (click)="getVaccines()"/>
+      </div>
+      <br/>
+      <div class="6u">
+        <input type="text" name="appointment" id="appointment" [(ngModel)]="scheduleVaccination.appointment" placeholder="appointment date" disabled/>
+        <input type="submit" value="Show available Times" (click)="showAvailableTimeSlots()"/>
+      </div>
+    <br/>
+      <div class="row uniform">
+        <div class="12u$">
+            <input type="submit" value="Schedule Vaccinations" (click)="doSscheduleVaccination()"/>
+        </div>
+      </div>
+      <br/>
+      <div>
+        <label *ngFor="let tim of availableTimes" class="heroes">
+          <input type="radio" [value]="tim" (change)="selectTimeSlot($event)">
+          <b>{{ tim }}</b>
+      </label>
+
+      <label *ngFor="let tim of vaccines" class="heroes">
+        <input type="radio" [value]="tim.id" (change)="selectVaccine($event)">
+        <b>{{ tim.id }} {{ tim.name }}</b>
+      </label>
+
+        <!--
+          <ul class="heroes">
+            <li *ngFor="let tim of availableTimes">
+              <span class="badge">{{tim}}</span>
+              <input type="radio" name="gender" value="{{tim}}">
+              <label for="{{tim}}">{{tim}}</label><br>
+            </li>
+          </ul>
+        -->
+      </div>
+  </form>
+
+  <br />
+  <ul class="heroes">
+    {{message}}
+  </ul>

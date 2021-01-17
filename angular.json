@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "vacc-now-front"
+  "defaultProject": "vacc-now-front",
+  "cli": {
+    "analytics": false
+  }
 }
