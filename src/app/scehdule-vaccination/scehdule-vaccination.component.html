@@ -7,15 +7,11 @@
 -->
 
     <div class="6u">
-      <input id="cash" type="radio" value="C" name="cash" [(ngModel)]="scheduleVaccination.paymentType">
+      <input id="cash" type="radio" value="C" name="cash" [(ngModel)]="scheduleVaccination.paymentType" (change)="handleChange('C')" checked="true">
       <label for="cash">Cash</label>
    </div>
    <div class="6u">
-      <input id="credit" type="radio" value="B" name="credit" [(ngModel)]="scheduleVaccination.paymentType">
-      <label for="credit">Credit</label>
-   </div>
-   <div class="6u">
-    <input id="fawry" type="radio" value="F" name="fawry" [(ngModel)]="scheduleVaccination.paymentType">
+    <input id="fawry" type="radio" value="F" name="fawry" [(ngModel)]="scheduleVaccination.paymentType" (change)="handleChange('F')" sele>
     <label for="fawry">Fawry</label>
   </div>
 
@@ -66,7 +62,13 @@
         -->
       </div>
   </form>
-
+  <br />
+  <div class="6u" *ngIf="fawryPayment">
+    To Email <input type="email" name="email" id="email" [(ngModel)]="email" placeholder="Send Invoice To email" />
+    <br />
+    <label style="color: red">{{error}}</label>
+    <label style="color: green">{{sentEmailMesage}}</label>
+  </div>
   <br />
   <ul class="heroes">
     {{message}}

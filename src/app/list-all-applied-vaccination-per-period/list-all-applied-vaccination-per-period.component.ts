@@ -47,7 +47,7 @@ export class ListAllAppliedVaccinationPerPeriodComponent implements OnInit {
   clearApp(application : any) : void {
     this.appliedVaccinations = this.appliedVaccinations.filter(obj => obj.id !== application.id);
     this.confirmedApplication = application;
-    this.sentEmailMesage = "An Invoice with confirmation was sent succesfully for email " + this.email;
+    this.sentEmailMesage = "A confirmation was sent succesfully for email " + this.email;
   } 
 
 }
